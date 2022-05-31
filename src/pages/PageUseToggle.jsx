@@ -1,4 +1,4 @@
-import { useToggle } from '../hooks/useToggle';
+import { useToggle } from '../hooks/UseToggle';
 
 export const PageUseToggle = () => {
 	const [userIsOnline, toggleUserIsOnline] = useToggle(false);
@@ -14,6 +14,20 @@ export const PageUseToggle = () => {
 			<button onClick={() => toggleUserIsOnline()}>
 				Toggle online status
 			</button>
+			<button onClick={() => toggleUserIsOnline(true)}>Login</button>
+			<button onClick={() => toggleUserIsOnline(false)}>Logout</button>
+			<hr />
+			{userIsOnline ? (
+				<p>User is currently online.</p>
+			) : (
+				<p>User is logged out.</p>
+			)}
+			<button onClick={() => toggleUserIsOnline()}>
+				Toggle online status
+			</button>
+			<button onClick={() => toggleUserIsOnline(true)}>Login</button>
+			<button onClick={() => toggleUserIsOnline(false)}>Logout</button>
+			<hr />
 		</>
 	);
 };
