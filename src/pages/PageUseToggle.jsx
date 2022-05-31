@@ -2,6 +2,7 @@ import { useToggle } from '../hooks/UseToggle';
 
 export const PageUseToggle = () => {
 	const [userIsOnline, toggleUserIsOnline] = useToggle(false);
+	const [layoutIsDark, toggleLayoutIsDark] = useToggle(true);
 
 	return (
 		<>
@@ -17,16 +18,14 @@ export const PageUseToggle = () => {
 			<button onClick={() => toggleUserIsOnline(true)}>Login</button>
 			<button onClick={() => toggleUserIsOnline(false)}>Logout</button>
 			<hr />
-			{userIsOnline ? (
-				<p>User is currently online.</p>
-			) : (
-				<p>User is logged out.</p>
-			)}
-			<button onClick={() => toggleUserIsOnline()}>
-				Toggle online status
+			{layoutIsDark ? <p>Layout is dark.</p> : <p>Layout is light.</p>}
+			<button onClick={() => toggleLayoutIsDark()}>Change layout</button>
+			<button onClick={() => toggleLayoutIsDark(true)}>
+				set to dark
 			</button>
-			<button onClick={() => toggleUserIsOnline(true)}>Login</button>
-			<button onClick={() => toggleUserIsOnline(false)}>Logout</button>
+			<button onClick={() => toggleLayoutIsDark(false)}>
+				set to light
+			</button>
 			<hr />
 		</>
 	);
