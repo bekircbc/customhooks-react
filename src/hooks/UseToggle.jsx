@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 export const useToggle = (_value) => {
 	const [value, setValue] = useState(_value);
-	const func = () => {
-		console.log('in the func');
+	const toggleValue = () => {
+		setValue(!value);
 	};
-	return [value, func];
+	return [value, toggleValue];
 };
